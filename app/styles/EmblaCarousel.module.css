@@ -1,0 +1,138 @@
+/* Embla Carousel Styles - EmblaCarousel.module.css */
+.embla {
+  position: relative;
+  margin: 30px auto;
+  width: 100%;
+  max-width: 600px;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #2c2c2c, #3e3e3e); /* Dark gradient background */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 15px 50px rgba(0, 0, 0, 0.3); /* Darker shadows */
+  backdrop-filter: blur(15px); /* Slight blur for depth */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Light inner border */
+}
+
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: rgba(30, 30, 30, 0.6); /* Darker overlay */
+}
+
+.embla__container {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.embla__slide {
+  position: relative;
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Ensure the overlay doesn't spill out */
+}
+
+.embla__slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* Darker image shadow */
+}
+
+/* New styles for the title overlay */
+.embla__title-overlay {
+  position: absolute;
+  bottom: 0; /* Attach the overlay to the bottom of the image */
+  width: 100%; /* Full width overlay */
+  height: 25%; /* Adjust height as needed */
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)); /* Transparent to dark gradient */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff; /* White text for visibility */
+  padding: 10px 20px;
+  border-bottom-left-radius: 12px; /* Match image border radius */
+  border-bottom-right-radius: 12px;
+  transition: background 0.3s ease; /* Smooth background transition */
+}
+
+/* Optional hover effect to highlight text */
+.embla__title-overlay:hover {
+  background: rgba(0, 0, 0, 0.8); /* Darker overlay on hover */
+}
+
+
+.embla__button__prev,
+.embla__button__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(50, 50, 50, 0.8); /* Darker button background */
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  color: #ddd; /* Light gray text */
+  border-radius: 50%;
+  padding: 14px;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
+}
+
+.embla__button__prev:hover,
+.embla__button__next:hover {
+  background: rgba(70, 70, 70, 1); /* Slightly lighter on hover */
+  color: #fff;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7); /* Larger shadow on hover */
+}
+
+.embla__button__prev:active,
+.embla__button__next:active {
+  background: #555;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.embla__button__prev {
+  left: 20px;
+}
+
+.embla__button__next {
+  right: 20px;
+}
+
+.embla__dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px 0;
+}
+
+.embla__dot {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  margin: 0 5px;
+  background: rgba(100, 100, 100, 0.8); /* Dark gray for inactive dots */
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5); /* Darker shadow for depth */
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.embla__dot:hover {
+  background: rgba(150, 150, 150, 0.9);
+  transform: scale(1.3);
+}
+
+.is_selected {
+  background: #ffffff; /* Bright white for selected dot */
+  transform: scale(1.4);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6); /* Darker shadow */
+}

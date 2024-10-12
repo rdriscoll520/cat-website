@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-900 text-white; /* Darker body background and white text */
+  }
+
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fade-in {
+    animation: fadeIn 1.5s ease-out;
+  }
+}
+
+/* Navbar Styles */
+.nav {
+  @apply bg-gradient-to-r from-gray-800 via-gray-900 to-black; /* Smooth dark gradient */
+  @apply shadow-lg rounded-b-lg p-4; /* Add shadow and rounded bottom corners */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+}
+
+.nav h1 {
+  @apply text-white text-4xl font-bold tracking-wider; /* White text, reduced size */
+}
+
+/* Navbar Links */
+.nav-links {
+  @apply flex space-x-6 text-gray-300 text-lg; /* Flex layout for links, spacing */
+}
+
+.nav-links a {
+  @apply transition-colors duration-300 ease-in-out; /* Smooth hover transition */
+}
+
+.nav-links a:hover {
+  @apply text-teal-300; /* Light mint color on hover */
+}
+
+/* Button Styles */
+.nav .nav-button {
+  @apply bg-gray-700 text-white px-4 py-2 rounded-full shadow-md; /* Rounded button */
+  @apply border border-gray-600 hover:bg-gray-600; /* Subtle border */
+  transition: 0.3s ease; /* Smooth hover effect */
+}
+
+.nav .nav-button:hover {
+  @apply bg-teal-500 text-black; /* Mint green with dark text on hover */
+}
+
+/* Image Gallery Styles */
+.image-container {
+  @apply relative shadow-lg rounded-md overflow-hidden; /* Position and styling for the image container */
+}
+
+.description-overlay {
+  @apply absolute bottom-0 left-0 w-full p-2 bg-black bg-opacity-50 text-white text-sm; /* Position and size for the overlay */
+  @apply opacity-0 transition-opacity duration-300 ease-in-out; /* Initial state: hidden */
+}
+
+.image-container:hover .description-overlay {
+  @apply opacity-100; /* Show overlay on hover */
+}
