@@ -1,6 +1,5 @@
 import Image from 'next/image';
 
-
 const catImages = [
   { src: '/images/cat1.jpeg', alt: 'Cat #1' },
   { src: '/images/cat2.jpeg', alt: 'Cat #2' },
